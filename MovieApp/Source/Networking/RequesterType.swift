@@ -9,7 +9,6 @@ import Combine
 import Foundation
 import Moya
 
-
 protocol RequesterType {
     func perform(target: AppTargetType) -> AnyPublisher<Data, Error>
 }

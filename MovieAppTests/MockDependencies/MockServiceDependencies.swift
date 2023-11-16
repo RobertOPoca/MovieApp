@@ -10,7 +10,4 @@ import Foundation
 
 struct MockMovieServiceDependencies: MovieService.Dependencies {
     let networkManager: NetworkManagerType
-    init(networkManager: NetworkManagerType) {
-        self.networkManager = networkManager
-    }
 }

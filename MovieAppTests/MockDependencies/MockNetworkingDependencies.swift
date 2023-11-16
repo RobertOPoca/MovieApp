@@ -5,7 +5,6 @@
 //  Created by Roberto De la O Pocasangre on 14/11/23.
 //
 
-
 import Foundation
 import Combine
 import Moya
@@ -35,7 +34,6 @@ struct MockRequester: RequesterType {
 
 struct MockRequesterDependencies: HasRequesterType {
     let requester: RequesterType
-    
     init(requesterState: RequesterState) {
         self.requester = MockRequester(requesterState: requesterState)
     }
@@ -44,7 +42,6 @@ struct MockRequesterDependencies: HasRequesterType {
 struct MockNetworkingManagerDependencies: HasNetworkManagerType {
     let networkManager: NetworkManagerType
     init(mockRequester: MockRequesterDependencies) {
-        
         self.networkManager = NetworkManager(dependencies: mockRequester)
     }
 }
