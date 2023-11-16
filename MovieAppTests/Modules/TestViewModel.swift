@@ -12,7 +12,6 @@ import Moya
 @testable import MovieApp
 
 class TestViewModel: XCTestCase {
-    
     private var cancellables: Set<AnyCancellable> = []
     
     func testViewModelSuccess() {
@@ -37,10 +36,10 @@ class TestViewModel: XCTestCase {
                 case .finished:
                     
                     expecation.fulfill()
-                case .failure(let error):
+                case .failure:
                     expecation.fulfill()
                 }
-            } receiveValue: { response in
+            } receiveValue: { _ in
                 isSuccess = true
             }.store(in: &cancellables)
         

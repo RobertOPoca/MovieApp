@@ -14,7 +14,7 @@ protocol MovieServiceType {
 
 struct MovieService: MovieServiceType {
     typealias Dependencies = HasNetworkManagerType
-    
+
     private let dependencies: Dependencies
     
     init(dependencies: Dependencies) {

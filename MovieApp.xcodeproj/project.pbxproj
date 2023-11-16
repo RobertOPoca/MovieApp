@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4844C2632B064C4B00A3AF2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4844C2652B064C4B00A3AF2B /* Localizable.strings */; };
+		4844C26F2B06571900A3AF2B /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 4844C26E2B06571900A3AF2B /* RswiftLibrary */; };
 		48A27CEE2A4B410600EE9011 /* MovieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A27CED2A4B410600EE9011 /* MovieAppApp.swift */; };
 		48A27CF02A4B410600EE9011 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A27CEF2A4B410600EE9011 /* ContentView.swift */; };
 		48A27CF22A4B410800EE9011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A27CF12A4B410800EE9011 /* Assets.xcassets */; };
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4844C2642B064C4B00A3AF2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48A27CEA2A4B410600EE9011 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A27CED2A4B410600EE9011 /* MovieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppApp.swift; sourceTree = "<group>"; };
 		48A27CEF2A4B410600EE9011 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4844C26F2B06571900A3AF2B /* RswiftLibrary in Frameworks */,
 				48DA4D4C2B0341610056B693 /* Moya in Frameworks */,
 				48DA4D4A2B0341610056B693 /* CombineMoya in Frameworks */,
 				48DA4D502B0341610056B693 /* RxMoya in Frameworks */,
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				48A27CF12A4B410800EE9011 /* Assets.xcassets */,
+				4844C2652B064C4B00A3AF2B /* Localizable.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48A27D0E2A4B410800EE9011 /* Build configuration list for PBXNativeTarget "MovieApp" */;
 			buildPhases = (
+				48C949922B05ABE9004F746A /* Swiftlint */,
 				48A27CE62A4B410600EE9011 /* Sources */,
 				48A27CE72A4B410600EE9011 /* Frameworks */,
 				48A27CE82A4B410600EE9011 /* Resources */,
@@ -244,6 +250,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4844C2712B06573900A3AF2B /* PBXTargetDependency */,
 			);
 			name = MovieApp;
 			packageProductDependencies = (
@@ -251,6 +258,7 @@
 				48DA4D4B2B0341610056B693 /* Moya */,
 				48DA4D4D2B0341610056B693 /* ReactiveMoya */,
 				48DA4D4F2B0341610056B693 /* RxMoya */,
+				4844C26E2B06571900A3AF2B /* RswiftLibrary */,
 			);
 			productName = MovieApp;
 			productReference = 48A27CEA2A4B410600EE9011 /* MovieApp.app */;
@@ -305,6 +313,7 @@
 			mainGroup = 48A27CE12A4B410600EE9011;
 			packageReferences = (
 				48DA4D482B0341610056B693 /* XCRemoteSwiftPackageReference "Moya" */,
+				4844C26D2B06571900A3AF2B /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = 48A27CEB2A4B410600EE9011 /* Products */;
 			projectDirPath = "";
@@ -322,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48DA4D6B2B04384E0056B693 /* MoviePopularList.json in Resources */,
+				4844C2632B064C4B00A3AF2B /* Localizable.strings in Resources */,
 				48A27CF52A4B410800EE9011 /* Preview Assets.xcassets in Resources */,
 				48A27CF22A4B410800EE9011 /* Assets.xcassets in Resources */,
 			);
@@ -336,6 +346,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48C949922B05ABE9004F746A /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint lint --config .swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		48A27CE62A4B410600EE9011 /* Sources */ = {
@@ -369,12 +401,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4844C2712B06573900A3AF2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4844C2702B06573900A3AF2B /* RswiftGenerateInternalResources */;
+		};
 		48A27CFC2A4B410800EE9011 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48A27CE92A4B410600EE9011 /* MovieApp */;
 			targetProxy = 48A27CFB2A4B410800EE9011 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4844C2652B064C4B00A3AF2B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4844C2642B064C4B00A3AF2B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		48A27D0C2A4B410800EE9011 /* Debug */ = {
@@ -413,7 +460,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -474,7 +521,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -629,6 +676,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4844C26D2B06571900A3AF2B /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.4.0;
+			};
+		};
 		48DA4D482B0341610056B693 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -640,6 +695,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4844C26E2B06571900A3AF2B /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4844C26D2B06571900A3AF2B /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		4844C2702B06573900A3AF2B /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
 		48DA4D492B0341610056B693 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 48DA4D482B0341610056B693 /* XCRemoteSwiftPackageReference "Moya" */;

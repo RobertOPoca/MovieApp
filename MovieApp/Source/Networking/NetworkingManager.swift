@@ -16,7 +16,7 @@ protocol NetworkManagerType {
 extension NetworkManagerType {
     func perform<T>(request: AppTargetType,
                     using decoder: JSONDecoder = .init()
-    ) -> AnyPublisher<T, Error> where T : Decodable {
+    ) -> AnyPublisher<T, Error> where T: Decodable {
         perform(request: request)
             .decode(type: T.self, decoder: decoder)
             .eraseToAnyPublisher()
