@@ -6,4 +6,8 @@
   
 */
 
-"home.title" = "Welcome";
+"home.title" = "Poca Entertainment";
+"home.movie.populars" = "Populars";
+"home.movie.upcoming" = "Upcoming";
+"home.movie.top.rated" = "Top rated";
+"home.movie.playing" = "Playing now";

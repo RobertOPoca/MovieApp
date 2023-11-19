@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol MovieServiceType {
-    func popularList() -> AnyPublisher<MediaResponse<Media>, Error>
+    func movieList(target: MovieTarget) -> AnyPublisher<MediaResponse<Media>, Error>
 }
 
 struct MovieService: MovieServiceType {
@@ -21,12 +21,16 @@ struct MovieService: MovieServiceType {
         self.dependencies = dependencies
     }
     
-    func popularList() -> AnyPublisher<MediaResponse<Media>, Error> {
+    func movieList(target: MovieTarget) -> AnyPublisher<MediaResponse<Media>, Error> {
         dependencies
             .networkManager
-            .perform(request: MovieTarget.popularList)
+            .perform(request: target)
             .eraseToAnyPublisher()
     }
+}
+
+protocol HasMovieServiceType {
+    var movieService: MovieServiceType { get }
 }
 
 struct MovieServiceDependencies: MovieService.Dependencies {
